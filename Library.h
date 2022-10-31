@@ -10,10 +10,19 @@
 #ifndef LIBRARY_H
 #define LIBRARY_H
 
+#include <list>
+#include "Movie.h"
+
 class Library {
  private:
-
+  std::list<movie> collection;
+  
  public:
+  Library();
+  readFile(std::string fileName);
+  findMovie(std::string movieTitle);
+  directorSearch(std::string directorName);
+  deleteMovie(std::string movieTitle);
   
 
 };
