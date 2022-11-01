@@ -27,7 +27,7 @@ void outputCollection(Library& l);
  * 
  */
 int main() {
-  cout << "Welcome to the Movie Collection Program.\n";
+  cout << "Welcome to the Movie Collection Program.\n\n";
 
   Library movies;
   
@@ -41,10 +41,11 @@ int main() {
     cout << " 5: Print your collection to the console\n";
     cout << " 6: Read a collection in from a file\n";
     cout << " 7: Output your collection to a file\n";
-    cout << " 0: Exit Program\n";
+    cout << " 0: Exit Program\n\n";
 
     cout << "What do you wish to do: ";
     cin >> choice;
+    cout << endl;
 
     if(choice == 1) {
       addMovie(movies);
@@ -71,7 +72,7 @@ int main() {
       cout << "Have a nice day.\n";
     }
     else {
-      cout << choice << " is not an option. Please try again.\n";
+      cout << choice << " is not an option. Please try again.\n\n";
     }
   }
   
@@ -83,9 +84,11 @@ void readDatabase(Library& l) {
   string filename;
   cout << "What is the name of the file you wish to read in (please add file extension):\n";
   cin >> filename;
+  cout << endl;
 
   cout << "Reading in " << filename << "\n";
   l.readFile(filename);
+  cout << "Success!\n\n";
 }
 
 void addMovie(Library& l) {
@@ -105,7 +108,7 @@ void addMovie(Library& l) {
 
   l.insert_sorted(temp);
 
-  cout << "\nNew movie has been added to the collection!\n";
+  cout << "\nNew movie has been added to the collection!\n\n";
 }
 
 void removeMovie(Library& l) {
@@ -114,11 +117,9 @@ void removeMovie(Library& l) {
   cout << "What is the name of the movie you wish to remove from your collection: ";
   getline(cin >> ws, movie);
   
-  cout << "\nRemoving movie... ";
+  cout << "\nRemoving movie...\n";
   
   l.deleteMovie(movie);
-  
-  cout << "Success!\n";
 }
 
 void searchTitle(Library& l) {
@@ -129,6 +130,7 @@ void searchTitle(Library& l) {
 
   cout << "\nSearching...\n";
   l.findMovie(movie);
+  cout << endl;
 }
 
 void searchDirector(Library& l) {
@@ -139,11 +141,13 @@ void searchDirector(Library& l) {
 
   cout << "\nSearching...\n";
   l.directorSearch(director);
+  cout << endl;
 }
 
 void printCollection(Library& l) {
   cout << "Printing collection:\n";
   l.printCollection();
+  cout << endl;
 }
 
 void outputCollection(Library& l) {
@@ -153,5 +157,5 @@ void outputCollection(Library& l) {
 
   cout << "Outputting...\n";
   l.outputCollection(fileout);
-  cout << "Success!\n";
+  cout << "Success!\n\n";
 }

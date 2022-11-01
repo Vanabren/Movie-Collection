@@ -1,5 +1,5 @@
-| Title: American Programmer | Director: Mary Harron |  Runtime: 104 | Format: Blu-ray | Price: 16.76 | Year Released: 2000 |
-| Title: Psycho | Director: Alfred Hitchcock |  Runtime: 109 | Format: VHS | Price: 4.01 | Year Released: 1960 |
-| Title: November the 3rd | Director: Dr. Ericson |  Runtime: 75 | Format: DVD | Price: 0.01 | Year Released: 2022 |
-| Title: The Shining... Monitor | Director: Stanley Kubrick |  Runtime: 146 | Format: VHS | Price: 10.00 | Year Released: 1980 |
-| Title: The Woman in Black | Director: James Watkins |  Runtime: 95 | Format: Digital | Price: 10.00 | Year Released: 2012 |
+| Title: American_Programmer | Director: Mary_Harron | Runtime: 104 | Format: Blu-ray | Price: 16.76 | Year Released: 2000 |
+| Title: Psycho | Director: Alfred_Hitchcock | Runtime: 109 | Format: VHS | Price: 4.01 | Year Released: 1960 |
+| Title: November_the_3rd | Director: Dr._Ericson | Runtime: 75 | Format: DVD | Price: 0.01 | Year Released: 2022 |
+| Title: The_Shining..._Monitor | Director: Stanley_Kubrick | Runtime: 146 | Format: VHS | Price: 10.00 | Year Released: 1980 |
+| Title: The_Woman_in_Black | Director: James_Watkins | Runtime: 95 | Format: Digital | Price: 10.00 | Year Released: 2012 |
