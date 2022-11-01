@@ -40,7 +40,16 @@ void Library::insert_sorted(Movie m) {
 }
 
 void Library::readFile(string fileName) {
+  ifstream fin;
+  fin.open(fileName);
 
+  Movie temp;
+
+  getline(fin, temp.title, ' ');
+  while(fin) {
+    getline(fin, temp.directorName, ' ');
+    fin >> temp.
+  }
 }
 
 string Library::findMovie(string movieTitle) {
