@@ -41,8 +41,9 @@ int main() {
     cout << " 5: Print your collection to the console\n";
     cout << " 6: Read a collection in from a file\n";
     cout << " 7: Output your collection to a file\n";
-    cout << " 0 to exit\n";
+    cout << " 0: Exit Program\n";
 
+    cout << "What do you wish to do: ";
     cin >> choice;
 
     if(choice == 1) {
