@@ -65,7 +65,7 @@ int main() {
       outputCollection(movies);
     }
     else if(choice == 0) {
-      cout << "Have a nice day.\n"
+      cout << "Have a nice day.\n";
     }
     else {
       cout << choice << " is not an option. Please try again.\n";
@@ -96,7 +96,7 @@ void addMovie(Library& l) {
   cout << "\nWhat format is the movie watched in (Digital, DVD, Blu-ray, or VHS): ";
   cin >> temp.format;
   cout << "\nWhat is the price of the movie (e.g 5.67): ";
-  cin >> price;
+  cin >> temp.price;
   cout << "\nWhat year was the movie released: ";
   cin >> temp.year;
 

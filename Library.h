@@ -11,6 +11,7 @@
 #define LIBRARY_H
 
 #include "Movie.h"
+#include <list>
 
 class Library {
  private:
@@ -21,8 +22,8 @@ class Library {
   void push_back(Movie m);
   void insert_sorted(Movie m);
   void readFile(std::string fileName);
-  std::string findMovie(std::string movieTitle);
-  std::string directorSearch(std::string directorName);
+  void findMovie(std::string movieTitle);
+  void directorSearch(std::string directorName);
   void deleteMovie(std::string movieTitle);
   void printCollection();
   void outputCollection(std::string filename);
