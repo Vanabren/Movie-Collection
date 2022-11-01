@@ -61,11 +61,57 @@ void Library::readFile(string fileName) {
 }
 
 string Library::findMovie(string movieTitle) {
-
+  if(collection.size == 0) {
+    cout << "No movies in collection!\n";
+    return;
+  }
+  
+  list<movie>::iterator it;
+  int i = 1; // Starting from 1 for however many movies were found
+  int moviesFound = 0; // Needed to check if any movies were even found 
+  for(it = collection.begin(); it != collection.end(); it++) {
+    if(movieTitle == *it.title) {
+      cout << "Movie " << i << ": ";
+      cout << " Title: " << movieTitle << "\n"; // Prints title
+      cout << " Director: " << *it.directorName << "\n"; // Prints director's name
+      cout << " Runtime: " << *it.movieRuntime << "\n"; // Prints movie's runtime
+      cout << " Format: " << *it.format << "\n"; // Prints device needed to watch movie
+      cout << " Price: " << *it.price << "\n";
+      cout << " Year Released: " << *it.year << "\n";
+      moviesFound++;
+    }
+    i++;
+  }
+  if(moviesFound == 0) {
+    cout << "No movies with that title found!\n";
+  }
 }
 
 string Library::directorSearch(string directorName) {
-
+  if(collection.size == 0) {
+    cout << "No movies in collection!\n";
+    return;
+  }
+  
+  list<movie>::iterator it;
+  int i = 1; // Starting from 1 for however many movies were found
+  int moviesFound = 0; // Needed to check if any movies were even found 
+  for(it = collection.begin(); it != collection.end(); it++) {
+    if(movieTitle == *it.title) {
+      cout << "Movie " << i << ": ";
+      cout << " Title: " << movieTitle << "\n"; // Title
+      cout << " Director: " << *it.directorName << "\n"; // Director Name
+      cout << " Runtime: " << *it.movieRuntime << "\n"; // Runtime
+      cout << " Format: " << *it.format << "\n"; // Device needed to watch
+      cout << " Price: " << *it.price << "\n"; // Price
+      cout << " Year Released: " << *it.year << "\n"; // YR released
+      moviesFound++;
+    }
+    i++;
+  }
+  if(moviesFound == 0) {
+    cout << "No movies with that director found!\n";
+  }
 }
 
 void Library::deleteMovie(string movieTitle) {
