@@ -24,6 +24,8 @@ class Library {
   std::string findMovie(std::string movieTitle);
   std::string directorSearch(std::string directorName);
   void deleteMovie(std::string movieTitle);
+  void printCollection();
+  void outputCollection(std::string filename);
 };
 
 

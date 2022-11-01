@@ -30,7 +30,7 @@ void Library::insert_sorted(Movie m) {
     return;
   }
   
-  list<movie>::iterator it;
+  list<Movie>::iterator it;
   for(it = collection.begin(); it != collection.end(); it++) {
     if(m.title < *it.title) {
       collection.insert(it, m);
@@ -93,7 +93,7 @@ string Library::directorSearch(string directorName) {
     return;
   }
   
-  list<movie>::iterator it;
+  list<Movie>::iterator it;
   int i = 1; // Starting from 1 for however many movies were found
   int moviesFound = 0; // Needed to check if any movies were even found 
   for(it = collection.begin(); it != collection.end(); it++) {
@@ -121,6 +121,8 @@ void Library::deleteMovie(string movieTitle) {
   }
 
   moviesDeleted = 0;
+  
+  list<Movie>::iterator it;
   for(it = collection.begin(); it != collection.end(); it++) {
     if(movieTitle == *it.title) {
       collection.erase(it); // obliterates the element the iterator is pointing to
@@ -130,4 +132,30 @@ void Library::deleteMovie(string movieTitle) {
   if(moviesDeleted == 0) {
     cout << "No movie(s) found with that title!\n";
   }
+}
+
+void Library::printCollection() {
+  if(collection.size == 0) {
+    cout << "No movies in collection!\n";
+    return;
+  }
+
+  list<Movie>::iterator it;
+  int numMovies = 1;
+  for(it = collection.begin(); it != collection.end(); it++) {
+    cout << "Movie " << numMovies << ": \n";
+    cout << " Title: " << *it.title << "\n";
+    cout << " Director: " << *it.directorName << "\n"; // Director Name
+    cout << " Runtime: " << *it.movieRuntime << "\n"; // Runtime
+    cout << " Format: " << *it.format << "\n"; // Device needed to watch
+    cout << " Price: " << *it.price << "\n"; // Price
+    cout << " Year Released: " << *it.year << "\n"; // YR released
+    numMovies++;
+  }
+}
+
+void Library::outputCollection(string filename) { // must be same format as read function
+  ofstream fout;
+  filename += ".txt";
+  fout.open(filename);
 }
