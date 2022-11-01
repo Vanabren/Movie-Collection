@@ -15,16 +15,17 @@
 
 class Library {
  private:
-  std::list<movie> collection;
+  std::list<Movie> collection;
   
  public:
   Library();
-  readFile(std::string fileName);
-  findMovie(std::string movieTitle);
-  directorSearch(std::string directorName);
-  deleteMovie(std::string movieTitle);
-  
-
+  void push_front(Movie m);
+  void push_back(Movie m);
+  void insert_sorted(Movie m);
+  void readFile(std::string fileName);
+  std::string findMovie(std::string movieTitle);
+  string directorSearch(std::string directorName);
+  void deleteMovie(std::string movieTitle);
 };
 
 
