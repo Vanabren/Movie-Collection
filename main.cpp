@@ -43,6 +43,8 @@ int main() {
     cout << " 7: Output your collection to a file\n";
     cout << " 0 to exit\n";
 
+    cin >> choice;
+
     if(choice == 1) {
       addMovie(movies);
     }
