@@ -44,16 +44,32 @@ void Library::readFile(string fileName) {
   fin.open(fileName);
 
   Movie temp;
-
+  string garbage; // to eat garbage data
+  
+  getline(fin, garbage, ':'); // eats :
+  getline(fin, garbage, ' '); // eats the " " in front of the title
+  
   fin >> temp.title; // priming read
   while(fin) {
+    getline(fin, garbage, ':');
+    getline(fin, garbage, ' ');
     fin >> temp.directorName;
+    getline(fin, garbage, ':');
+    getline(fin, garbage, ' ');
     fin >> temp.movieRuntime;
+    getline(fin, garbage, ':');
+    getline(fin, garbage, ' ');
     fin >> temp.price;
+    getline(fin, garbage, ':');
+    getline(fin, garbage, ' ');
     fin >> temp.year;
+    getline(fin, garbage, '|');
     
     collection.insert_sorted(temp);
 
+    getline(fin, garbage, '\n');
+    getline(fin, garbage, ':');
+    getline(fin, garbage, ' ');
     fin >> temp.title;
   }
 
@@ -158,4 +174,17 @@ void Library::outputCollection(string filename) { // must be same format as read
   ofstream fout;
   filename += ".txt";
   fout.open(filename);
+
+  if(collection.size == 0) {
+    fout.close();
+    return;
+  }
+
+  list<Movie>::iterator it;
+  for(it = collection.begin(); it != collection.end(); it++) {
+    fout << "| Title: " << *it.title << " | Director: " << *it.directorName
+         << " | Runtime: " << *it.movieRuntime << " | Format: " << *it.format
+         << " | Price: " << *it.price << " | Year Released: " << *it.year << " |\n";
+  }
+  cout << "File successfully outputted!\n";
 }
