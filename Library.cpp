@@ -1,6 +1,6 @@
 /**
  * @file Library.cpp
- * @author Vance Brenderabrandis
+ * @author Vance Brenderabrandis + Jacqueline Bybee
  * @date 2022-10-27
  * @brief later
  * 
@@ -45,11 +45,19 @@ void Library::readFile(string fileName) {
 
   Movie temp;
 
-  getline(fin, temp.title, ' ');
+  fin >> temp.title; // priming read
   while(fin) {
-    getline(fin, temp.directorName, ' ');
-    fin >> temp.
+    fin >> temp.directorName;
+    fin >> temp.movieRuntime;
+    fin >> temp.price;
+    fin >> temp.year;
+    
+    collection.insert_sorted(temp);
+
+    fin >> temp.title;
   }
+
+  fin.close();
 }
 
 string Library::findMovie(string movieTitle) {
