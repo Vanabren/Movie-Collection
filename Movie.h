@@ -17,6 +17,6 @@ struct Movie {
   std::string format;
   float price;
   int year;
-}
+};
 
 #endif //MOVIE_H
