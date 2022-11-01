@@ -11,12 +11,12 @@
 #define MOVIE_H
 
 struct Movie {
-  std::string title = "";
-  std::string directorName = "";
-  int movieRuntime = 0;
-  std::string format = "";
-  float price = 0.0;
-  int year = 0;
+  std::string title;
+  std::string directorName;
+  int movieRuntime;
+  std::string format;
+  float price;
+  int year;
 }
 
 #endif //MOVIE_H

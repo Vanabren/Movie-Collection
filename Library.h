@@ -10,7 +10,6 @@
 #ifndef LIBRARY_H
 #define LIBRARY_H
 
-#include <list>
 #include "Movie.h"
 
 class Library {
@@ -18,13 +17,12 @@ class Library {
   std::list<Movie> collection;
   
  public:
-  Library();
   void push_front(Movie m);
   void push_back(Movie m);
   void insert_sorted(Movie m);
   void readFile(std::string fileName);
   std::string findMovie(std::string movieTitle);
-  string directorSearch(std::string directorName);
+  std::string directorSearch(std::string directorName);
   void deleteMovie(std::string movieTitle);
 };
 
