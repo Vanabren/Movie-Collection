@@ -97,7 +97,7 @@ string Library::directorSearch(string directorName) {
   int i = 1; // Starting from 1 for however many movies were found
   int moviesFound = 0; // Needed to check if any movies were even found 
   for(it = collection.begin(); it != collection.end(); it++) {
-    if(movieTitle == *it.title) {
+    if(directorName == *it.directorName) {
       cout << "Movie " << i << ": ";
       cout << " Title: " << movieTitle << "\n"; // Title
       cout << " Director: " << *it.directorName << "\n"; // Director Name
@@ -115,5 +115,19 @@ string Library::directorSearch(string directorName) {
 }
 
 void Library::deleteMovie(string movieTitle) {
+  if(collection.size() == 0) {
+    cout << "No movies in collection!\n";
+    return;
+  }
 
+  moviesDeleted = 0;
+  for(it = collection.begin(); it != collection.end(); it++) {
+    if(movieTitle == *it.title) {
+      collection.erase(it); // obliterates the element the iterator is pointing to
+      moviesDeleted++;
+    }
+  }
+  if(moviesDeleted == 0) {
+    cout << "No movie(s) found with that title!\n";
+  }
 }
