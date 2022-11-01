@@ -1,6 +1,6 @@
 /**
  * @file Movie.h
- * @author Vance Brenderabrandis
+ * @author Vance Brenderabrandis + Jacqueline Bybee
  * @date 2022-10-31
  * @brief later
  * 

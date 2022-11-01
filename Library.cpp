@@ -172,7 +172,6 @@ void Library::printCollection() {
 
 void Library::outputCollection(string filename) { // must be same format as read function
   ofstream fout;
-  filename += ".txt";
   fout.open(filename);
 
   if(collection.size == 0) {

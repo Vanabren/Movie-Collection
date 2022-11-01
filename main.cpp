@@ -1,6 +1,6 @@
 /**
  * @file main.cpp
- * @author Vance Brenderabrandis
+ * @author Vance Brenderabrandis + Jacqueline Bybee
  * @date 2022-10-27
  * @brief later
  * 
@@ -14,13 +14,13 @@
 
 using namespace std;
 
-void readDatabase();
-void addMovie();
-void removeMovie();
-void searchTitle();
-void searchDirector();
-void printCollection();
-void outputCollection();
+void readDatabase(Library& l);
+void addMovie(Library& l);
+void removeMovie(Library& l);
+void searchTitle(Library& l);
+void searchDirector(Library& l);
+void printCollection(Library& l);
+void outputCollection(Library& l);
 
 /**
  * Driver for Movie Collection program
@@ -44,22 +44,25 @@ int main() {
     cout << " 0 to exit\n"
 
     if(choice == 1) {
-      
+      addMovie(movies);
     }
     else if(choice == 2) {
-
+      removeMovie(movies);
     }
     else if(choice == 3) {
-
+      searchTitle(movies);
     }
     else if(choice == 4) {
-
+      searchDirector(movies);
     }
     else if(choice == 5) {
-
+      printCollection(movies);
     }
     else if(choice == 6) {
-
+      readDatabase(movies);
+    }
+    else if(choice == 7) {
+      outputCollection(movies);
     }
     else if(choice == 0) {
       cout << "Have a nice day.\n"
@@ -73,31 +76,80 @@ int main() {
 }
 
 
-void readDatabase() {
+void readDatabase(Library& l) {
+  string filename;
+  cout << "What is the name of the file you wish to read in (please add file extension):\n";
+  cin >> filename;
 
+  cout << "Reading in " << filename << "\n";
+  l.readFile(filename);
 }
 
-void addMovie() {
-  Movie add;
+void addMovie(Library& l) {
+  Movie temp;
+  cout << "What is the title of the movie: ";
+  cin.get(); // because the choices above are entered from cin
+  getline(cin, temp.title);
+  cout << "\nWhat is the name of the director: ";
+  getline(cin, temp.directorName);
+  cout << "\nWhat is the runtime of the movie (in minutes): ";
+  cin >> temp.movieRuntime;
+  cout << "\nWhat format is the movie watched in (Digital, DVD, Blu-ray, or VHS): ";
+  cin >> temp.format;
+  cout << "\nWhat is the price of the movie (e.g 5.67): ";
+  cin >> price;
+  cout << "\nWhat year was the movie released: ";
+  cin >> temp.year;
+
+  l.insert_sorted(temp);
+
+  cout << "\nNew movie has been added to the collection!\n";
+}
+
+void removeMovie(Library& l) {
+  string movie;
   
+  cout << "What is the name of the movie you wish to remove from your collection: ";
+  getline(cin, movie);
+  
+  cout << "\nRemoving movie... ";
+  
+  l.deleteMovie(movie);
+  
+  cout << "Success!\n";
 }
 
-void removeMovie() {
+void searchTitle(Library& l) {
+  string movie;
+  
+  cout << "What is the title of the movie(s) you wish to search for: ";
+  getline(cin, movie);
 
+  cout << "\nSearching...\n";
+  l.findMovie(movie);
 }
 
-void searchTitle() {
+void searchDirector(Library& l) {
+  string director;
 
+  cout << "What is the name of the director whose movies you wish to search for: ";
+  getline(cin, director);
+
+  cout << "\nSearching...\n";
+  l.directorSearch(director);
 }
 
-void searchDirector() {
-
+void printCollection(Library& l) {
+  cout << "Printing collection:\n";
+  l.printCollection();
 }
 
-void printCollection() {
+void outputCollection(Library& l) {
+  string fileout;
+  cout << "What is the name of the file you wish to output your collection to (include file extensions):\n";
+  cin >> fileout;
 
-}
-
-void outputCollection() {
-
+  cout << "Outputting...\n";
+  l.outputCollection(fileout);
+  cout << "Success!\n";
 }
