@@ -41,7 +41,7 @@ int main() {
     cout << " 5: Print your collection to the console\n";
     cout << " 6: Read a collection in from a file\n";
     cout << " 7: Output your collection to a file\n";
-    cout << " 0 to exit\n"
+    cout << " 0 to exit\n";
 
     if(choice == 1) {
       addMovie(movies);
@@ -88,10 +88,9 @@ void readDatabase(Library& l) {
 void addMovie(Library& l) {
   Movie temp;
   cout << "What is the title of the movie: ";
-  cin.get(); // because the choices above are entered from cin
-  getline(cin, temp.title);
+  getline(cin >> ws, temp.title);
   cout << "\nWhat is the name of the director: ";
-  getline(cin, temp.directorName);
+  getline(cin >> ws, temp.directorName);
   cout << "\nWhat is the runtime of the movie (in minutes): ";
   cin >> temp.movieRuntime;
   cout << "\nWhat format is the movie watched in (Digital, DVD, Blu-ray, or VHS): ";
@@ -110,7 +109,7 @@ void removeMovie(Library& l) {
   string movie;
   
   cout << "What is the name of the movie you wish to remove from your collection: ";
-  getline(cin, movie);
+  getline(cin >> ws, movie);
   
   cout << "\nRemoving movie... ";
   
@@ -123,7 +122,7 @@ void searchTitle(Library& l) {
   string movie;
   
   cout << "What is the title of the movie(s) you wish to search for: ";
-  getline(cin, movie);
+  getline(cin >> ws, movie);
 
   cout << "\nSearching...\n";
   l.findMovie(movie);
@@ -133,7 +132,7 @@ void searchDirector(Library& l) {
   string director;
 
   cout << "What is the name of the director whose movies you wish to search for: ";
-  getline(cin, director);
+  getline(cin >> ws, director);
 
   cout << "\nSearching...\n";
   l.directorSearch(director);
