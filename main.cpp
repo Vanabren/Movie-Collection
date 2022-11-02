@@ -2,9 +2,10 @@
  * @file main.cpp
  * @author Vance Brenderabrandis + Jacqueline Bybee
  * @date 2022-10-27
- * @brief later
+ * @brief Main driver for Movie Collection Program
  * 
- * later
+ * Main serves to guide the user in full usage of the Movie Collection program and 
+ * create their own collection in which to do various commands with.
  */
 
 #include <iostream>
@@ -14,12 +15,75 @@
 
 using namespace std;
 
+
+/**
+ * Reads in a file of the user's choice to read into their collection
+ *
+ * @param Library& l The main library used throughout the program passed as a reference
+ * @return Returns nothing, only reads in data from file (if file exists) into collection in sorted order
+ * @post Library will be populated with data
+ * 
+ */
 void readDatabase(Library& l);
+
+/**
+ * Allows the user to add a movie of their choice to the collection. Sorts by Title
+ *
+ * @param Library& l The main library used throughout the program passed as a reference
+ * @return void Returns nothing, only adds a Movie to the Library
+ * @post A new movie has been sorted into the user's Collection
+ * 
+ */
 void addMovie(Library& l);
+
+/**
+ * Allows user to search for a movie(s) by title to remove from Collection
+ *
+ * @param Library& l The main library used throughout the program passed as a reference
+ * @return void Returns nothing, only removes designated Movie (if it exists)
+ * @post Movie(s) has been removed from the Library
+ * 
+ */
 void removeMovie(Library& l);
+
+/**
+ * Allows the user to search for a Movie's title and print the details of all movies with that title
+ *
+ * @param Library& l The main library used throughout the program passed as a reference
+ * @return void Returns nothing, only prints details of searched-for movie (if it exists)
+ * @post Details are printed to screen
+ * 
+ */
 void searchTitle(Library& l);
+
+/**
+ * Allows the user to search for a Director and prints the details of all movies by that Director
+ *
+ * @param Library& l The mian library used throughout the program passed as a reference
+ * @return void Returns nothing, only prints data to screen
+ * @post Details are printed to screen
+ * 
+ */
 void searchDirector(Library& l);
+
+/**
+ * Prints contents of collection to screen in formatted manner
+ *
+ * @param Library& l Main library used throughout the program passed as a reference
+ * @return void Returns nothing, only prints contents of Library's collection to screen
+ * @post Details of Library are printed to screen
+ * 
+ */
 void printCollection(Library& l);
+
+/**
+ * Allows the user to output contents of collection to a file of their choice
+ *
+ * @param Library& l The main library used throughout the program passed as reference
+ * @return void Returns nothing, only outputs contents of collection to file
+ * @post New file is created with contents of Collection. Can be read in as input file.
+ * 
+ */
 void outputCollection(Library& l);
 
 /**
@@ -92,7 +156,7 @@ void readDatabase(Library& l) {
 }
 
 void addMovie(Library& l) {
-  Movie temp;
+  Movie temp; // Temp Movie struct to pass to method
   cout << "What is the title of the movie: ";
   getline(cin >> ws, temp.title);
   cout << "\nWhat is the name of the director: ";
@@ -112,7 +176,7 @@ void addMovie(Library& l) {
 }
 
 void removeMovie(Library& l) {
-  string movie;
+  string movie; // Name of movie(s) to search for and delete
   
   cout << "What is the name of the movie you wish to remove from your collection: ";
   getline(cin >> ws, movie);
@@ -123,7 +187,7 @@ void removeMovie(Library& l) {
 }
 
 void searchTitle(Library& l) {
-  string movie;
+  string movie; // Name of movies to search for and print details for
   
   cout << "What is the title of the movie(s) you wish to search for: ";
   getline(cin >> ws, movie);
@@ -151,7 +215,7 @@ void printCollection(Library& l) {
 }
 
 void outputCollection(Library& l) {
-  string fileout;
+  string fileout; // name of the file to output contents of Library to
   cout << "What is the name of the file you wish to output your collection to (include file extensions):\n";
   cin >> fileout;
 
