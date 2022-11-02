@@ -24,6 +24,6 @@ Library.o: 	Library.cpp Library.h # compiles Library into object code
 main.o:		main.cpp Library.h  # compiles main into object code
 	$(CC) $(CFLAGS) main.cpp
 
-clean:
+clean: # cleans all object files, executables, and temporary files from directory
 	$(RM) movie *.o *~ 
 
