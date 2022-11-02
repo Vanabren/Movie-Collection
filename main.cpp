@@ -30,7 +30,7 @@ void readDatabase(Library& l);
  * Allows the user to add a movie of their choice to the collection. Sorts by Title
  *
  * @param Library& l The main library used throughout the program passed as a reference
- * @return void Returns nothing, only adds a Movie to the Library
+ * @return Returns nothing, only adds a Movie to the Library
  * @post A new movie has been sorted into the user's Collection
  * 
  */
@@ -40,7 +40,7 @@ void addMovie(Library& l);
  * Allows user to search for a movie(s) by title to remove from Collection
  *
  * @param Library& l The main library used throughout the program passed as a reference
- * @return void Returns nothing, only removes designated Movie (if it exists)
+ * @return Returns nothing, only removes designated Movie (if it exists)
  * @post Movie(s) has been removed from the Library
  * 
  */
@@ -50,7 +50,7 @@ void removeMovie(Library& l);
  * Allows the user to search for a Movie's title and print the details of all movies with that title
  *
  * @param Library& l The main library used throughout the program passed as a reference
- * @return void Returns nothing, only prints details of searched-for movie (if it exists)
+ * @return Returns nothing, only prints details of searched-for movie (if it exists)
  * @post Details are printed to screen
  * 
  */
@@ -60,7 +60,7 @@ void searchTitle(Library& l);
  * Allows the user to search for a Director and prints the details of all movies by that Director
  *
  * @param Library& l The mian library used throughout the program passed as a reference
- * @return void Returns nothing, only prints data to screen
+ * @return Returns nothing, only prints data to screen
  * @post Details are printed to screen
  * 
  */
@@ -70,7 +70,7 @@ void searchDirector(Library& l);
  * Prints contents of collection to screen in formatted manner
  *
  * @param Library& l Main library used throughout the program passed as a reference
- * @return void Returns nothing, only prints contents of Library's collection to screen
+ * @return Returns nothing, only prints contents of Library's collection to screen
  * @post Details of Library are printed to screen
  * 
  */
@@ -80,7 +80,7 @@ void printCollection(Library& l);
  * Allows the user to output contents of collection to a file of their choice
  *
  * @param Library& l The main library used throughout the program passed as reference
- * @return void Returns nothing, only outputs contents of collection to file
+ * @return Returns nothing, only outputs contents of collection to file
  * @post New file is created with contents of Collection. Can be read in as input file.
  * 
  */
