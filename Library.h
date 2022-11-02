@@ -24,10 +24,8 @@
 class Library {
  private:
   std::list<Movie> collection; // Our standard-linked list which we use to actually manage our movie collection
-  
- public:
-
-/**
+ 
+  /**
  * Adds a new element to the front of the Collection linked list (not used)
  *
  * @param Movie m Movie "node" to push to the front
@@ -36,8 +34,8 @@ class Library {
  * 
  */
   void push_front(Movie m);
-
-/**
+ 
+ /**
  * Adds a new node to the end of the Collection LL
  *
  * @param Movie m Movie node to push to the back
@@ -46,7 +44,9 @@ class Library {
  * 
  */
   void push_back(Movie m);
-
+ 
+ public:
+ 
 /**
  * Inserts a node sorted alphabetically by Title name
  *
