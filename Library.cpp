@@ -2,9 +2,9 @@
  * @file Library.cpp
  * @author Vance Brenderabrandis + Jacqueline Bybee
  * @date 2022-10-27
- * @brief later
+ * @brief Implementation of the Library class' methods
  * 
- * later
+ * Holds implementation and logic for the Library class' methods in use of the Movie Collection program
  */
 
 #include <iostream>
@@ -34,7 +34,7 @@ void Library::insert_sorted(Movie m) {
   list<Movie>::iterator it;
   for(it = collection.begin(); it != collection.end(); it++) {
     if(m.title < it->title) {
-      collection.insert(it, m);
+      collection.insert(it, m); // insert inserts new node right before the iterator
       return;
     }
   }
