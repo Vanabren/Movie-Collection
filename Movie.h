@@ -14,7 +14,7 @@
 /**
  * Movie struct which holds all relevant info for movies in our collection
  *
- * @class Movie Movie.h "Movie-Collection/Movie.h"
+ * @struct Movie Movie.h "Movie-Collection/Movie.h"
  * @brief Movie struct with relevant info for movies
  *
  */
